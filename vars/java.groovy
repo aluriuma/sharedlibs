@@ -4,9 +4,11 @@ def call(String repoUrl) {
        tools {
          maven "Maven3"
        }
+    stages {
      stage("Checkout Code") {
                steps {
-                   git branch: 'master'
+                   git branch: 'main'
+                 url: "${https://github.com/aluriuma/sharedlibs.git}"
                }
      }
        stage("Build") {
@@ -14,5 +16,6 @@ def call(String repoUrl) {
                    sh "mvn clean install"
                }
            }
+    }
   }
 }
