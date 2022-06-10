@@ -8,7 +8,7 @@ def call(String repoUrl) {
      stage("Checkout Code") {
                steps {
                    git branch: 'main'
-                 url: "${https://github.com/aluriuma/sharedlibs.git}"
+                 url: "${repoUrl}"
                }
      }
        stage("Build") {
